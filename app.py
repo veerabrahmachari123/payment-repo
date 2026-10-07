@@ -8,7 +8,7 @@ app = Flask(__name__)
 def index():
     return jsonify(
         service="payment-api",
-        status="ok",
+        status="ok-v2",
         version=os.getenv("APP_VERSION", "dev"),
         commit=os.getenv("GIT_COMMIT", "unknown"),
         branch=os.getenv("BRANCH_NAME", "unknown"),
