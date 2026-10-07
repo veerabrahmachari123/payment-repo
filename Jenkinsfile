@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     options {
-        disableConcurrentBuilds()
+        // disableConcurrentBuilds()
         timestamps()
     }
 
@@ -63,6 +63,7 @@ pipeline {
                     docker pull $REGISTRY/$IMAGE:$TAG
                     docker stop payment || true
                     docker rm payment || true
+                    sleep 15
 
                     docker run -d \
                       --name payment \
